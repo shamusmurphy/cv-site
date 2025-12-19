@@ -6,19 +6,43 @@
     <title>Shamus Murphy</title>
 
     <style>
-        /* The only CSS: Formatting for readability */
+        /* Grid layout: two columns (main + sidebar) */
         body {
-            max-width: 700px;
-            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 2rem auto;
             padding: 0 1rem;
-            
-            /* System fonts stack - looks good on any OS */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            
-            /* Readable text sizing */
-            font-size: 1.1rem;
-            line-height: 1.5;
-            color: #111;
+            align-items: start;
+            grid-auto-rows: min-content;
+            line-height: 1.4;
+        }
+
+        header {
+            grid-column: 1 / -1;
+        }
+
+        main {
+            grid-column: 1 / 2;
+        }
+
+        aside {
+            grid-column: 2 / 3;
+            background: #fbfbfb;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        hr {
+            grid-column: 1 / -1;
         }
 
         /* Basic spacing for headers */
@@ -26,16 +50,6 @@
             line-height: 1.2;
             margin-top: 2rem;
             margin-bottom: 1rem;
-        }
-
-        /* Standard link styling - keeping it raw */
-        a {
-            color: #0000EE; /* Default web blue */
-            text-decoration: underline;
-        }
-        
-        a:visited {
-            color: #551A8B; /* Default visited purple */
         }
         
         /* Simple spacing for lists */
@@ -60,41 +74,38 @@
 
     <header>
         <h1>Shamus Murphy</h1>
-        <p>
-            Third-year Math and Computer Science Student at University of Vermont.
-        </p>
+        <p>Third-year Math and Computer Science Student at University of Vermont.</p>
     </header>
 
     <hr>
 
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <a href="https://github.com/shamusmurphy/dp-medical-test-classifier"><strong>DP-Diabetes-Diagnoser</strong></a> — Differentially Private Neural Network to diagnose patients based on medical data.
-            </li>
-        </ul>
-    </section>
+    <main>
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/shamusmurphy/dp-medical-test-classifier"><strong>DP-Diabetes-Diagnoser</strong></a> — Differentially Private Neural Network to diagnose patients based on medical data.
+                </li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Research</h2>
-        <ul>
-            <li><a href="#">Undergraduate Research</a> (2026)</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Research</h2>
+            <ul>
+                <li><a href="#">Undergraduate Research</a> (2026)</li>
+            </ul>
+        </section>
+    </main>
+
+    <aside>
+        <h2>The Lab</h2>
+        <p>I maintain a public wiki of my working notes, thoughts, and research.</p>
+        <p>👉 <a href="https://thelab.shamusmurphy.xyz">Enter the Lab</a></p>
+    </aside>
 
     <hr>
 
     <footer>
-        <h2>The Lab</h2>
-        <p>
-            I maintain a public wiki of my working notes, thoughts, and research.
-        </p>
-        <p>
-            👉 <a href="https://thelab.shamusmurphy.xyz">Enter the Lab</a>
-        </p>
-        
-        <br><br>
         <p><small>shamusmurphy.xyz</small></p>
     </footer>
 
