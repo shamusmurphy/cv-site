@@ -6,101 +6,132 @@
     <title>Shamus Murphy</title>
 
     <style>
-        /* Center page and provide a two-column grid container */
+        /* 1. Reset & Global Variables */
         body {
-            margin: 0;
-            padding: 2rem 1rem;
-            display: flex;
-            justify-content: center;
-            line-height: 1.4;
+            /* Strict Times New Roman */
+            font-family: "Times New Roman", Times, serif;
+            background-color: #fff;
+            color: #000;
+            
+            /* Center the document */
+            max-width: 680px; 
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            
+            /* Readability */
+            line-height: 1.5;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            max-width: 720px;
-            width: 100%;
-            align-items: start;
-            grid-auto-rows: min-content;
-        }
-
-        /* Make top-level children span both columns so sections stack */
-        .container > * {
-            grid-column: 1 / -1;
-        }
-
-        aside {
-            padding: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        /* Basic spacing for headers */
-        h1, h2, h3 {
+        /* 2. Headings */
+        h1, h2 {
+            color: #000;
             line-height: 1.2;
-            margin-top: 2rem;
             margin-bottom: 1rem;
         }
+
+        h1 {
+            margin-top: 0;
+            font-size: 2rem;
+            border-bottom: 2px solid #000; /* Heavier anchor for the title */
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 2.5rem;
+            border-bottom: 1px solid #000; /* Section divider */
+            padding-bottom: 0.25rem;
+        }
+
+        /* 3. Links - Strict Black & White */
+        a {
+            color: #000;
+            text-decoration: underline;
+            text-underline-offset: 3px; /* Slightly more readable underline */
+        }
         
-        /* Simple spacing for lists */
+        a:hover {
+            text-decoration: none; /* Remove underline on hover for interaction feedback */
+            background-color: #000;
+            color: #fff; /* Invert colors on hover for high contrast feedback */
+        }
+
+        /* 4. Lists & Layout */
         ul {
-            padding-left: 20px;
-            margin-bottom: 2rem;
+            padding-left: 0;
+            list-style: none; /* Remove bullets for a cleaner look */
         }
-        
+
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
-        
-        /* A simple divider */
-        hr {
-            border: 0;
-            border-top: 1px solid;
-            margin: 3rem 0;
+
+        /* Helper for the project title to stand out without color */
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* 5. Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 1rem;
+            border-top: 2px solid #000;
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Remove default link underline in footer for a navigation feel */
+        footer a {
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            background-color: transparent;
+            color: #000;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Shamus Murphy</h1>
-            <p>Third-year Math and Computer Science Student at University of Vermont.</p>
-        </header>
+    <header>
+        <h1>Shamus Murphy</h1>
+        <p>Third-year Math and Computer Science Student at University of Vermont.</p>
+    </header>
 
-        <hr>
+    <main>
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/shamusmurphy/dp-medical-test-classifier">
+                        <span class="item-title">DP-Diabetes-Diagnoser</span>
+                    </a>
+                    <br>
+                    Differentially Private Neural Network to diagnose patients based on medical data.
+                </li>
+            </ul>
+        </section>
 
-        <main>
-            <section>
-                <h2>Projects</h2>
-                <ul>
-                    <li>
-                        <a href="https://github.com/shamusmurphy/dp-medical-test-classifier"><strong>DP-Diabetes-Diagnoser</strong></a> — Differentially Private Neural Network to diagnose patients based on medical data.
-                    </li>
-                </ul>
-            </section>
+        <section>
+            <h2>Research</h2>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="item-title">Undergraduate Research</span>
+                    </a> 
+                    (2026)
+                </li>
+            </ul>
+        </section>
+    </main>
 
-            <section>
-                <h2>Research</h2>
-                <ul>
-                    <li><a href="#">Undergraduate Research</a> (2026)</li>
-                </ul>
-            </section>
-        </main>
-
-        <hr>
-
-        <footer>
-            <p><a href="https://thelab.shamusmurphy.xyz" target="_blank" rel="noopener noreferrer">Enter the Lab.</a></p>
-            <p><a href="https://github.com/shamusmurphy" target="_blank" rel="noopener noreferrer">Github</a></p>
-            <p><a href="https://www.linkedin.com/in/shamus-murphy-0496032a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-            <p><a href="https://www.linkedin.com/in/shamus-murphy-0496032a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-        </footer>
-    </div>
+    <footer>
+        <a href="https://thelab.shamusmurphy.xyz" target="_blank" rel="noopener noreferrer">Enter the Lab</a>
+        <a href="https://github.com/shamusmurphy" target="_blank" rel="noopener noreferrer">Github</a>
+        <a href="https://www.linkedin.com/in/shamus-murphy-0496032a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </footer>
 
 </body>
 </html>
