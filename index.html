@@ -6,29 +6,34 @@
     <title>Shamus Murphy</title>
 
     <style>
-        /* Grid layout: two columns (main + sidebar) */
+        /* Center page and provide a two-column grid container */
         body {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            align-items: start;
-            grid-auto-rows: min-content;
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            color: #111;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
             line-height: 1.4;
         }
 
-        header {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 720px;
+            width: 100%;
+            align-items: start;
+            grid-auto-rows: min-content;
+        }
+
+        /* Make top-level children span both columns so sections stack */
+        .container > * {
             grid-column: 1 / -1;
         }
 
-        main {
-            grid-column: 1 / 2;
-        }
-
         aside {
-            grid-column: 2 / 3;
             background: #fbfbfb;
             padding: 1rem;
             border-radius: 6px;
@@ -36,13 +41,8 @@
         }
 
         footer {
-            grid-column: 1 / -1;
             text-align: center;
             margin-top: 2rem;
-        }
-
-        hr {
-            grid-column: 1 / -1;
         }
 
         /* Basic spacing for headers */
@@ -72,42 +72,44 @@
 </head>
 <body>
 
-    <header>
-        <h1>Shamus Murphy</h1>
-        <p>Third-year Math and Computer Science Student at University of Vermont.</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Shamus Murphy</h1>
+            <p>Third-year Math and Computer Science Student at University of Vermont.</p>
+        </header>
 
-    <hr>
+        <hr>
 
-    <main>
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <a href="https://github.com/shamusmurphy/dp-medical-test-classifier"><strong>DP-Diabetes-Diagnoser</strong></a> — Differentially Private Neural Network to diagnose patients based on medical data.
-                </li>
-            </ul>
-        </section>
+        <main>
+            <section>
+                <h2>Projects</h2>
+                <ul>
+                    <li>
+                        <a href="https://github.com/shamusmurphy/dp-medical-test-classifier"><strong>DP-Diabetes-Diagnoser</strong></a> — Differentially Private Neural Network to diagnose patients based on medical data.
+                    </li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Research</h2>
-            <ul>
-                <li><a href="#">Undergraduate Research</a> (2026)</li>
-            </ul>
-        </section>
-    </main>
+            <section>
+                <h2>Research</h2>
+                <ul>
+                    <li><a href="#">Undergraduate Research</a> (2026)</li>
+                </ul>
+            </section>
+        </main>
 
-    <aside>
-        <h2>The Lab</h2>
-        <p>I maintain a public wiki of my working notes, thoughts, and research.</p>
-        <p>👉 <a href="thelab.shamusmurphy.xyz">Enter the Lab</a></p>
-    </aside>
+        <aside>
+            <h2>The Lab</h2>
+            <p>I maintain a public wiki of my working notes, thoughts, and research.</p>
+            <p>👉 <a href="https://thelab.shamusmurphy.xyz">Enter the Lab</a></p>
+        </aside>
 
-    <hr>
+        <hr>
 
-    <footer>
-        <p><small>shamusmurphy.xyz</small></p>
-    </footer>
+        <footer>
+            <p><small>shamusmurphy.xyz</small></p>
+        </footer>
+    </div>
 
 </body>
 </html>
